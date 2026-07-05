@@ -1,7 +1,7 @@
 defaultNamespace: mealie
 
 helm:
-  chart: ../mealie
+  chart: .
   values:
     image:
      tag: "v3.20.1" 
