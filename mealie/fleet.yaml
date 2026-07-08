@@ -3,4 +3,4 @@ defaultNamespace: mealie
 helm:
   chart: .
   valuesFiles:
-    - ../deployment/values.yaml
+    - "../deployment/values.yaml"
