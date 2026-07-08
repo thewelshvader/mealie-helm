@@ -3,6 +3,10 @@ replicaCount: 1
 image:
   tag: "v3.20.1"
 
+service:
+  type: ClusterIP
+  port: 9000
+
 httpRoute:
   # HTTPRoute enabled.
   enabled: false
