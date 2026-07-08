@@ -68,7 +68,7 @@ spec:
             - name: "POSTGRES_USER"
               value: {{ .Values.database.username }}
             - name: "POSTGRES_PORT"
-              value: {{ .Values.database.port }}
+              value: {{ .Values.database.port | quote }}
             - name: "POSTGRES_SERVER"
               value: {{ .Values.database.server }}
             - name: "POSTGRES_DB"
