@@ -162,3 +162,10 @@ affinity: {}
 
 logging:
   logLevel: "debug"
+
+database:
+  engine: "postgres"
+  username: "mealie-admin"
+  port: "5432"
+  server: "postgres-primary.postgres-cluster.svc"
+  dbName: "mealie"
