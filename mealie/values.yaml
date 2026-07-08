@@ -162,3 +162,6 @@ affinity: {}
 
 logging:
   logLevel: "debug"
+
+database:
+  engine: "postgres"
