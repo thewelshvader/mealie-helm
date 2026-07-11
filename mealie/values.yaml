@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v3.20.1"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -78,23 +78,28 @@ ingress:
 # (see: https://gateway-api.sigs.k8s.io/guides/)
 httpRoute:
   # HTTPRoute enabled.
-  enabled: false
+  enabled: true
   # HTTPRoute annotations.
   annotations: {}
   # Which Gateways this Route is attached to.
   parentRefs:
-  - name: gateway
-    sectionName: http
-    # namespace: default
+  - name: rancher-gateway
+    namespace: cattle-system
   # Hostnames matching HTTP header.
   hostnames:
-  - chart-example.local
+  - mealie.delaneyhq.com
   # List of rules and filters applied.
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /headers
+    - backendRefs:
+        - group: ''
+          kind: Service
+          name: mealie-mealie
+          port: 9000
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
   #   filters:
   #   - type: RequestHeaderModifier
   #     requestHeaderModifier:
