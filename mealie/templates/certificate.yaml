@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mealie-certificate
+  namespace: cattle-system
+spec:
+  secretName: mealie-tls
+  dnsNames:
+    - mealie.delaneyhq.com
+  issuerRef:
+    name : issuer-production
+    kind: ClusterIssuer
+    group: cert-manager.io
