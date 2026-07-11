@@ -84,7 +84,6 @@ httpRoute:
   # Which Gateways this Route is attached to.
   parentRefs:
   - name: rancher-gateway
-    sectionName: http
     namespace: cattle-system
   # Hostnames matching HTTP header.
   hostnames:
