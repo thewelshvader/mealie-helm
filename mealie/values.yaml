@@ -97,7 +97,7 @@ httpRoute:
           name: mealie-mealie
           port: 9000
           weight: 1
-    - matches:
+      matches:
         - path:
             type: PathPrefix
             value: /
