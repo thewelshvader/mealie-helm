@@ -4,4 +4,4 @@ helm:
   chart: .
   values:
     image:
-     tag: "v3.20.1" 
+     tag: "v3.21.0" 
